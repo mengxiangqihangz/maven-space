@@ -1,0 +1,33 @@
+<plugin>
+  		<!-- cargo是一家专门从事“启动servlet容器”的组织 -->
+  			<groupId>org.codehaus.cargo</groupId>
+  			<artifactId>cargo-maven2-plugin</artifactId>
+  			<version>1.6.4</version>
+  			<!-- 针对插件进行配置 -->
+  			<configuration>
+  			<!-- 配置当前系统中容器的位置 -->
+			  	<container>
+			  		<containerId>tomcat7x</containerId>
+			  		<home>C:\Java\apache-tomcat-7.0.72</home>
+			  	</container>
+		  		<configuration>
+		  			<type>existing</type>
+		  			<home>C:\Java\apache-tomcat-7.0.72</home>
+		  			<!-- 如果tomcat使用的是默认8080的端口，则不必如下配置 -->
+		  			<properties>
+		  				<cargo.servlet.port>8090</cargo.servlet.port>
+		  			</properties>
+		  		</configuration>
+  			</configuration>
+  			<!-- 配置插件在什么情况下执行 -->
+			<executions>
+				<execution>
+					<id>cargo-run</id>
+					<phase>install</phase>
+					<goals>
+						<!-- 插件的目标 -->
+						<goal>run</goal>
+					</goals>
+				</execution>
+			</executions>
+  		</plugin>

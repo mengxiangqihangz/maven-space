@@ -1,0 +1,81 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.atguigu.maven</groupId>
+  <artifactId>javaweb-maven-1.1</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+  
+  <dependencies>
+
+  	<!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+	<dependency>
+	    <groupId>javax.servlet</groupId>
+	    <artifactId>javax.servlet-api</artifactId>
+	    <version>3.1.0</version>
+	    <scope>provided</scope>
+	</dependency>
+		<dependency>
+	    <groupId>log4j</groupId>
+	    <artifactId>log4j</artifactId>
+	    <version>1.2.17</version>
+	    <scope>compile</scope>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/javax.servlet.jsp/jsp-api -->
+	<dependency>
+	    <groupId>javax.servlet.jsp</groupId>
+	    <artifactId>jsp-api</artifactId>
+	    <version>2.2</version>
+	    <!-- <scope>compile</scope>  --><!-- jsp，servlet的jar包 ，注意不要用compiler，因为compiler的jar包还参与运行，而运行是由tomcat去有运行，tomcat本身就有这些jar包，会产生冲突 -->
+	    <scope>provided</scope> 
+	</dependency>
+	<dependency>
+	    <groupId>com.atguigu.maven</groupId>
+	    <artifactId>JavaProject</artifactId>
+	    <version>0.0.1-SNAPSHOT</version>
+	    <scope>compile</scope>
+	</dependency>
+  </dependencies>
+  
+  <build>
+  	<finalName>atguiguweb</finalName>
+  	<!-- 配置构建过程需要使用的插件 -->
+  	<plugins>
+  		<plugin>
+  		<!-- cargo是一家专门从事“启动servlet容器”的组织 -->
+  			<groupId>org.codehaus.cargo</groupId>
+  			<artifactId>cargo-maven2-plugin</artifactId>
+  			<version>1.6.4</version>
+  			<!-- 针对插件进行配置 -->
+  			<configuration>
+  			<!-- 配置当前系统中容器的位置 -->
+			  	<container>
+			  		<containerId>tomcat7x</containerId>
+			  		<home>C:\Java\apache-tomcat-7.0.72</home>
+			  	</container>
+		  		<configuration>
+		  			<type>existing</type>
+		  			<home>C:\Java\apache-tomcat-7.0.72</home>
+		  			<!-- 如果tomcat使用的是默认8080的端口，则不必如下配置 -->
+		  			<properties>
+		  				<cargo.servlet.port>8090</cargo.servlet.port>
+		  			</properties>
+		  		</configuration>
+  			</configuration>
+  			<!-- 配置插件在什么情况下执行 -->
+			<executions>
+				<execution>
+					<id>cargo-run</id>
+					<phase>install</phase>
+					<goals>
+						<!-- 插件的目标 -->
+						<goal>run</goal>
+					</goals>
+				</execution>
+			</executions>
+  		</plugin>
+		  		
+  	</plugins>
+  
+  
+  </build>
+</project>

@@ -1,0 +1,26 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="javaweb-maven-1.1:war exploded">
+    <output-path>$PROJECT_DIR$/../javaweb-maven-1.1/target/atguiguweb</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="javaweb-maven-1.1" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: log4j:log4j:1.2.17" />
+          <element id="archive" name="JavaProject-0.0.1-SNAPSHOT.jar">
+            <element id="module-output" name="JavaProject" />
+          </element>
+          <element id="library" level="project" name="Maven: org.springframework:spring-core:4.1.1.RELEASE" />
+          <element id="archive" name="java-project-maven-1.1-0.0.1-SNAPSHOT.jar">
+            <element id="module-output" name="java-project-maven-1.1" />
+          </element>
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/../javaweb-maven-1.1/target/atguiguweb/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="javaweb-maven-1.1/web/Web" />
+    </root>
+  </artifact>
+</component>

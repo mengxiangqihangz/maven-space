@@ -1,0 +1,22 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"><!-- 校验  -->
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.zzl</groupId>			<!-- 一般为公司名称 + 项目名称 -->
+  <artifactId>demo4</artifactId>		<!-- 项目名称 + 模块名称 -->
+  <packaging>war</packaging>
+  <version>0.0.1-SNAPSHOT</version> 	<!-- 版本号 主版本号：项目的重大架构变更，次版本号：较大范围的功能添加或变化，增量版本号：重大bug修复 -->
+  											<!-- snapshot：快照版，GA：最稳定版,beta:公测版 -->
+  <name>demo4 Maven Webapp</name>		
+  <url>http://maven.apache.org</url>
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  <build>
+    <finalName>demo4</finalName>
+  </build>
+</project>
